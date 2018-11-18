@@ -96,3 +96,4 @@ plt.xlabel('x')
 plt.ylabel('y')
 plt.title('Simple Chart')
 
+
