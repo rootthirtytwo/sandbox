@@ -89,9 +89,10 @@ Example format strings::
 x = np.linspace(0,5,11)
 y = x ** 2
 
-plt.xlabel('x')
+
 # plat grapth
 plt.plot(x, y ,'ro--')
+plt.xlabel('x')
 plt.ylabel('y')
 plt.title('Simple Chart')
 
