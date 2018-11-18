@@ -93,7 +93,6 @@ y = x ** 2
 # plat grapth
 plt.plot(x, y ,'ro--')
 plt.xlabel('x')
-plt.ylabel('y')
 plt.title('Simple Chart')
-
-
+plt.ylabel('y')
+plt.show()
