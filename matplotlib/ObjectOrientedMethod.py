@@ -45,4 +45,45 @@ fig4 = plt.figure(figsize=(3,2))# width, height
 axes4 = fig4.add_axes([0,0,1,1])
 axes4.plot(x,y)
 
-fig4.savefig('test.png', dpi=200)
+#fig4.savefig('test.png', dpi=200)# to save the image in a file
+
+
+'''
+loc : int or string or pair of floats, default: 'upper right'
+    The location of the legend. Possible codes are:
+
+        ===============   =============
+        Location String   Location Code
+        ===============   =============
+        'best'            0
+        'upper right'     1
+        'upper left'      2
+        'lower left'      3
+        'lower right'     4
+        'right'           5
+        'center left'     6
+        'center right'    7
+        'lower center'    8
+        'upper center'    9
+        'center'          10
+        ===============   =============
+
+
+    Alternatively can be a 2-tuple giving ``x, y`` of the lower-left
+    corner of the legend in axes coordinates (in which case
+    ``bbox_to_anchor`` will be ignored).
+'''
+
+fig5 = plt.figure()
+axes5 = fig5.add_axes([0,0,1,1])
+axes5.plot(x,x**2, label = "x square")
+axes5.plot(x,x**3, label = "x cube")
+axes5.legend(loc=0)
+
+#more plot properties
+fig5 = plt.figure()
+axes5 = fig5.add_axes([0,0,1,1])
+axes5.plot(x,x**2, label = "x square", color="#A458A6", linewidth=5, alpha = 0.8 \
+           ,linestyle='-', marker='*', markersize=20, markerfacecolor='red' \
+           , markeredgewidth=1, markeredgecolor='blue')
+axes5.legend(loc=0)
