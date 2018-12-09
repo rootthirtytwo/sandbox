@@ -1,3 +1,22 @@
-items:
-    cars: 10
-    bikes: 20
+person:
+    name: raghav
+    age: 30
+    male: true
+    brithdate: 1984-04-04 07:00:00
+    color: null
+    hobbies:
+        - listening to music
+        - movies
+        - cricket
+    movies: ["movie a", "movie b"]
+    friends:
+        - name: "Dev"
+          age: 29
+        - {name: "Dev1", age: 28}
+    description: >
+        Nothing
+        much
+        tell
+    signature: |
+        Raghav
+        Texas, USA

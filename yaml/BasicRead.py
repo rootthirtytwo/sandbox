@@ -18,7 +18,7 @@ if __name__ == "__main__":
 
     data = yaml_loader(file_path)
 
-    items = data.get("items")
+    items = data.get("person")
 
     print(data)
 
