@@ -17,7 +17,7 @@ class Parent():
     def email(self):
         return self.fname+'.'+self.lname+'@company.com'
 
-    # reprentation method definition
+    # representation method definition
     def __repr__(self):
         return self.lname.title()+', '+self.fname.title()
 
