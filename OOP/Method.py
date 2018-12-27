@@ -25,6 +25,7 @@ class Method():
 
 obj = Method(60)
 
+
 print(obj.reg_method())
 print(Method.reg_method(obj))
 
@@ -34,4 +35,5 @@ print(Method.cls_method())
 
 print(obj.stc_method(20))
 print(Method.stc_method(80))
+
 
