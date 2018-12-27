@@ -3,23 +3,29 @@ class Parent():
     # Class attribute
     country = 'USA'
 
-    # initializer/Instance attribute
+    # Initializer/Instance attribute
     def __init__(self, fname, lname):
         self.fname = fname
         self.lname = lname
+        self.country = 'Canada'
 
     #class method
     def get_email(self):
         return self.fname+'.'+self.lname+'@company.com'
 
-    # property decorator
-    @property
-    def email(self):
-        return self.fname+'.'+self.lname+'@company.com'
-
     # representation method definition
     def __repr__(self):
         return self.lname.title()+', '+self.fname.title()
+
+class Child(Parent):
+
+    def get_age(self, sex):
+        return '{0} age is {1}'.format(self.fname, sex)
+
+class Sibling(Parent):
+    # overriding class attribute
+    country = 'Canada'
+    pass
 
 # Instantiating Objects
 obj1 = Parent('John', 'legend')
@@ -30,7 +36,7 @@ obj2 = Parent('John', 'Hash')
 obj2.country = 'Japan'
 
 # notice you can not override the value of class attribute with assignment operator until unless it is a class method
-print(obj1.fname, obj1.lname, obj1.country, obj2.email)
+print(obj1.fname, obj1.lname, obj1.country, obj2.get_email())
 
 # printing the type of an object
 print(type(obj1))
@@ -38,6 +44,19 @@ print(type(obj1))
 # repr - function usage explained
 print(obj1)
 
+# Object from child class
+obj3 = Child('Shan', 'Davis')
+print(obj3.get_email())
+print(obj3.get_age(20))
+
+# check whether the object created with child class is instance of Parent
+print(isinstance(obj3, Parent))
 
 
+obj4 = Sibling('Adam','Guy')
+# Sibling inherits Parent not the child and this can not access the attributes or methods from Child class
+print(isinstance(obj4, Child))
+
+# overriding
+print(obj4.country)
 
