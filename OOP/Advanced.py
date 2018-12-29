@@ -18,7 +18,10 @@ class Employee():
 
     # special method : representation
     def __repr__(self):
-        return self.fname.title()+' '+self.lname.title()
+        return 'Emplyee({}, {}, {})'.format(self.fname, self.lname, self.pay )
+
+    def __str__(self):
+        return '{0}'.format(self.fullname)
 
     # object method
     def raise_pay(self):
@@ -78,11 +81,13 @@ class Manager(Employee):
         for emp in self.emplyees:
             print('Dev =>', emp.fullname)
 
+
+
 # defining objects for Employee class
 emp1 = Employee.from_strig('Ram-Charan-120000')
 print(emp1.fullname)
 print(emp1.email)
-
+print(emp1)
 
 # defining objects for Developer class
 dev1 = Developer('John','Kadam', 80000, 'Python')
