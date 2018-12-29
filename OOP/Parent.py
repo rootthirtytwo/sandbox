@@ -19,8 +19,15 @@ class Parent():
 
 class Child(Parent):
 
+    def __init__(self,fname, lname, sex):
+        super().__init__(fname,lname)
+        self.sex = sex
+
     def get_age(self, sex):
         return '{0} age is {1}'.format(self.fname, sex)
+
+    def __repr__(self):
+        return '{0} {1} is a {2}'.format(self.fname,self.lname, self.sex)
 
 class Sibling(Parent):
     # overriding class attribute
@@ -45,9 +52,10 @@ print(type(obj1))
 print(obj1)
 
 # Object from child class
-obj3 = Child('Shan', 'Davis')
+obj3 = Child('Shan', 'Davis', 'Boy')
 print(obj3.get_email())
 print(obj3.get_age(20))
+print(obj3)
 
 # check whether the object created with child class is instance of Parent
 print(isinstance(obj3, Parent))
