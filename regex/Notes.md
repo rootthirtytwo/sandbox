@@ -23,12 +23,12 @@
 ## Options
 The option flag is added as an extra argument to the search() or findall().
 * IGNORECASE : Ignore upper/lowercase differences for matching.
-* DOTALL : allow dot (.) to match newline.
-* MULTILINE : Multiline match in the given string is spread across many lines. 
+* DOTALL : allows the dot (.) metacharacter match all characters, including the newline character (\n).
+* MULTILINE : is necessary if your input string has newline characters (\n), this flag allows the start and end metacharacter (^ and $ respectively) to match at the beginning and end of each line instead of at the beginning and end of the whole input string. 
 
 ## Greedy v/s Non-Greedy
 * .*  : Greedy. e.g pattern = <b.*>, str = <b\>Hello<\/b>, result = <b\>Hello<\/b> goes till the last available '>' character match.
-* .*? : Non-Greedy. Stops are first occurrence, result = <b\>
+* .*? : Non-Greedy. Stops at first occurrence, result = <b\>
 
 ## substitution
 

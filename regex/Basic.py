@@ -65,3 +65,32 @@ if emails is not None:
 emails = re.findall(r'([\w.-]+)@([\w-]+\.\w+)', str) ## ['alice@google.com', 'bob@abc.com']
 if emails is not None:
     print(emails)
+
+
+# some more examples
+
+regex = r"([a-zA-Z]+) (\d+)"
+if re.search(regex, "June 24"):
+    match = re.search(regex, "June 24")
+    # to know the start and end position of the found string
+    print("Match at index %s, %s" % (match.start(), match.end()))
+
+
+# sub example
+regex = r"([a-zA-Z]+) (\d+)"
+# interchanging the first and second match with 'of' inbetween
+print(re.sub(regex, r"\2 of \1", "June 24, August 9, Dec 12"))
+
+# using compile method
+regex = re.compile(r"(\w+) World")
+result = regex.search("Hello World basic example")
+
+if result:
+    print(result.group())
+
+# findall method
+for result in regex.findall("Hello World, Bonjour World"):
+    print(result)
+
+# sub example
+print(regex.sub(r"\1 Earth", "Hello World"))
