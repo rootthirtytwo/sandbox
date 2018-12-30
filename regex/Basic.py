@@ -2,7 +2,10 @@ import re
 
 
 # match : match = re.match(pat, str)
+# search : match = re.search(pat, str)
+# findall : Finds all the matches and returns them as a list of strings
 
+# match = re.findall(pat, str)
 str = 'How ?s How ry the weather today?'
 
 match = re.match(r'How \W', str)
@@ -34,7 +37,7 @@ if match is not None:
 
 email = 'john.reid@company.com' # very basic email id validation
 
-match = re.search(r'[\w.-]+@][\w-]+\.\w+', email)
+match = re.search(r'[\w.-]+@[\w-]+\.\w+', email)
 if match is None:
     print('{} is {}'.format(email,'bad email id'))
 else:
@@ -47,3 +50,18 @@ if match is not None:
     print("First block match: ", match.group(1))
     print("Second block match: ",match.group(2))
 
+
+
+# find all example
+
+str = 'purple alice@google.com, blah monkey bob@abc.com blah dishwasher'
+
+emails = re.findall(r'[\w\.-]+@[\w-]+\.\w+', str) ## ['alice@google.com', 'bob@abc.com']
+if emails is not None:
+    for email in emails:
+        print(email)
+
+
+emails = re.findall(r'([\w.-]+)@([\w-]+\.\w+)', str) ## ['alice@google.com', 'bob@abc.com']
+if emails is not None:
+    print(emails)
