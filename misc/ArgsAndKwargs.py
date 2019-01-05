@@ -1,23 +1,25 @@
 
 def args_test1(*args):
+
     for arg in args:
         print(arg)
 
 def args_test2(arg, *args):
 
-    print("Arg: ",arg)
+    print("Arg.. ",arg)
 
-    print("\nArgs..",sep="\n")
+    print("Args..")
     for i in args:
         print(i)
 
 def kwargs_test1(**kwargs):
+
     for k,v in kwargs.items():
         print("{0} --> {1}".format(k,v))
 
 def arg_args_kwargs(arg, *args, **kwargs):
-    print("\nArg, args and kwargs examples..",sep="\n")
-    print("Arg..", arg)
+
+    print("Arg.. ", arg)
 
     print("Args..")
     for i in args:
@@ -34,20 +36,24 @@ if __name__ == "__main__":
     args = ('first','second','third')
 
     #AGRS
-    args_test1('a','b','c')
+    print("Args test 1!")
+    args_test1('inline 1', 'inline 2', 'inline 3')
 
-    args_test2('a','b','c')
-
+    print("\nArgs test 2!")
     args_test1(*args)
 
+    print("\nArgs test 3!",sep="\n")
+    args_test2(*args)
+
     # KWARGS
-    #kwargs run 1
+    print("\nKwargs test 1!", sep="\n")
     kwargs_test1(a=1, b='c')
 
-    print("\n")
+    print("\nKwargs test 2!", sep="\n")
     # kwargs run 2
     kwargs_test1(**kwargs)
 
 
     #Arg, args and kwargs
+    print("\nArg, args and kwargs test!", sep="\n")
     arg_args_kwargs(*args, **kwargs)
