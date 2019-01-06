@@ -6,7 +6,7 @@ import time
 r = redis.Redis(host='localhost', port=6379, db=0)
 
 # clearing the keys before creating them
-r.delete('S001','S002','S003')
+r.delete('S001','S002','S003', 'S004')
 
 # creating an key value pair
 r.set('S001','1')
@@ -52,3 +52,10 @@ print("S003(xx=True) value is ",r.get('S003'))
 
 r.set('S003','hi',xx=False) # if exists then update, so it prints Hi Again
 print("S003(xx=False) value is ",r.get('S003'))
+
+# Append explained
+r.set('S004', 'Hi')
+print("Before Append S004 ", r.get('S004'))
+r.append('S004', ' Redis')
+print("Append 'Redis' to S004 ",r.get('S004'))
+
