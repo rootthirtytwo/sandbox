@@ -33,4 +33,4 @@ if __name__ == "__main__":
                           "cars": 20
                       }}
 
-    yaml_dump(write_data, write_file_path)
+    # yaml_dump(write_data, write_file_path)
