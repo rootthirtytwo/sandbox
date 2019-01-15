@@ -1,4 +1,4 @@
-def selection_search(mylist):
+def selection_sort(mylist):
     '''
 
     :param mylist: unsorted list
@@ -21,7 +21,7 @@ if __name__ == "__main__":
     lst = [2,5,1,3,4]
 
     print("Umsorted list : ", lst)
-    print("Sorted list :", selection_search(lst))
+    print("Sorted list :", selection_sort(lst))
 
     # time complexity O(n^2)
 
